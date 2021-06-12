@@ -1,6 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, request, send_file
-import requests, json
-import time
+
 
 app = Flask(__name__)
 
