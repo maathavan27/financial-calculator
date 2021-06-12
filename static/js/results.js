@@ -16,8 +16,15 @@ window.onload = function(){
 
 
 function printValues() {
-    console.log(income);
+    console.log("income=" + income);
+    console.log("mortgage=" + mortgage);
+    console.log("rent=" + rent);
+    console.log("Subscriptions:")
     for (var i = 0; i < moneyList.length; i++) {
-        console.log(subList[i].value + ": $" + moneyList[i].value);
+        console.log("    " + subList[i].value + ": $" + moneyList[i].value);
     }
+    console.log("car payments=" + car);
+    console.log("car insurance=" + ins);
+    console.log("phone payments=" + phone);
+    console.log("internet=" + internet);
 }
