@@ -29,6 +29,7 @@ function checkForInt(numBox, error) {
     }
 }
 
+
 function inputSubs(numBox, error) {
     checkForInt(numBox, error)
     removeSubs(numBox);
@@ -60,12 +61,13 @@ function inputSubs(numBox, error) {
         finances.appendChild(err);
         finances.appendChild(br);
     }
+    
 }
 
 function removeSubs(numBox) {
     var labelList = Array.prototype.slice.call(document.getElementsByClassName("labeler"), 0);
-    var subList = Array.prototype.slice.call(document.getElementsByClassName("subscriptions"), 0);
-    var moneyList = Array.prototype.slice.call(document.getElementsByClassName("subsMoney"), 0);
+    subList = Array.prototype.slice.call(document.getElementsByClassName("subscriptions"), 0);
+    moneyList = Array.prototype.slice.call(document.getElementsByClassName("subsMoney"), 0);
     var breakList = Array.prototype.slice.call(document.getElementsByClassName("subBreak"), 0);
     var fullList = labelList.concat(subList, moneyList, breakList);
     
@@ -76,4 +78,37 @@ function removeSubs(numBox) {
     for (var i = 0; i < fullList.length; i++) {
         fullList[i].remove();
     }
+}
+
+function printValues() {
+    var subList = Array.prototype.slice.call(document.getElementsByClassName("subscriptions"), 0);
+    var moneyList = Array.prototype.slice.call(document.getElementsByClassName("subsMoney"), 0);
+    for (var i = 0; i < moneyList.length; i++) { //shows how to get values
+        console.log(subList[i].value + ": $" + moneyList[i].value);
+    }
+    console.log("abc");
+}
+
+var income, mortgage, rent, subList, moneyList, car, ins, phone, internet;
+function store() {
+    income = document.getElementById("salary").value;
+    mortgage = document.getElementById("mortgageNum").value;
+    rent = document.getElementById("rentNum").value;
+    subList = Array.prototype.slice.call(document.getElementsByClassName("subscriptions"), 0);
+    moneyList = Array.prototype.slice.call(document.getElementsByClassName("subsMoney"), 0);
+    car = document.getElementById("carnum").value;
+    ins = document.getElementById("insnum").value;
+    phone = document.getElementById("phonenum").value;
+    internet = document.getElementById("internetnum").value;
+
+    sessionStorage.setItem('income', income);
+    sessionStorage.setItem('mortgage', mortgage);
+    sessionStorage.setItem('rent', rent);
+    sessionStorage.setItem('subList', JSON.stringify(subList));
+    sessionStorage.setItem('moneyList', JSON.stringify(moneyList));
+    sessionStorage.setItem('car', car);
+    sessionStorage.setItem('ins', ins);
+    sessionStorage.setItem('phone', phone);
+    sessionStorage.setItem('internet', internet);
+    console.log('stored');
 }

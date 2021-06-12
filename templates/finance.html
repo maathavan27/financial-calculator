@@ -11,7 +11,7 @@
 <body>
     <h>Calculator</h>
     <form id="finances">
-        <br><label>What is your monthly income? </label><input id="inp1" type="number" oninput="checkForNegative(this, errorSalary)">
+        <br><label>What is your monthly income? </label><input id="salary" type="number" oninput="checkForNegative(this, errorSalary)">
         <span id="errorSalary" class="error">Please enter a positive number</span><br><br>
         
         <span>Do you have a mortgage? </span>
@@ -40,7 +40,7 @@
         <input type="radio" id="ncar" class="radioButton" value="No" name="car" onclick="hideQuestion(qcar)"><label>No</label>
         <br>
         <div id="qcar" class="hidden"><label>How much do you pay for your car per month? <input type="number" id="carnum" class="hiddenInp" oninput="checkForNegative(this, errorcar)"> 
-        <br>  How much is car insurance per month?  </label>  <input type="number" id="carnum" class="hiddenInp" oninput="checkForNegative(this, errorcar)"><br>
+        <br>  How much is car insurance per month?  </label>  <input type="number" id="insnum" class="hiddenInp" oninput="checkForNegative(this, errorcar)"><br>
         <span id="errorcar" class="error">Please enter a positive number</span></div>
         
         <br>
@@ -49,11 +49,11 @@
         <input type="radio" id="nphone" class="radioButton" value="No" name="phone" onclick="hideQuestion(qphone)"><label>No</label>
         <br>
         <div id="qphone" class="hidden"><label>How much do you pay for your phone per month? <input type="number" id="phonenum" class="hiddenInp" oninput="checkForNegative(this, errorphone)">
-        <br>  How much do you pay for internet per month?  </label>  <input type="number" id="phonenum" class="hiddenInp" oninput="checkForNegative(this, errorphone)"><br>
+        <br>  How much do you pay for internet per month?  </label>  <input type="number" id="internetnum" class="hiddenInp" oninput="checkForNegative(this, errorphone)"><br>
         <span id="errorphone" class="error">Please enter a positive number</span></div><br>
 
 
-        <br><a href="{{ url_for('results') }}"><input id="submit" type="button" value="Submit Results" onclick=""></a>a
+        <br><a href="{{ url_for('results') }}"><input id="submit" type="button" value="Submit Results" onclick="store()"></a><br><input type="button" onclick="printValues()">
 
     </form>
 
