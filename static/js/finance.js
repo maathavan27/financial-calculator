@@ -33,6 +33,7 @@ function inputSubs(numBox, error) {
     checkForInt(numBox, error)
     removeSubs(numBox);
     var num = parseInt(numBox.value);
+    var finances = document.getElementById("subboxes");
     for (var i = 0; i < num; i++) {
         var nameLabel = document.createElement("label");
         nameLabel.innerHTML = "Name: ";
@@ -52,12 +53,12 @@ function inputSubs(numBox, error) {
         err.setAttribute("class", "error");
         var br = document.createElement("br");
         br.setAttribute("class", "subBreak");
-        document.body.appendChild(nameLabel);
-        document.body.appendChild(sub);
-        document.body.appendChild(moneyLabel);
-        document.body.appendChild(money);
-        document.body.appendChild(err);
-        document.body.appendChild(br);
+        finances.appendChild(nameLabel);
+        finances.appendChild(sub);
+        finances.appendChild(moneyLabel);
+        finances.appendChild(money);
+        finances.appendChild(err);
+        finances.appendChild(br);
     }
 }
 

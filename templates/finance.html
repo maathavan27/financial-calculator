@@ -30,10 +30,11 @@
 
         <span>How many subscriptions do you have (gym, music, streaming, etc)? </span>
         <input type="number" id="numSubs" oninput="inputSubs(this, errorSubs)">
-        <span id="errorSubs" class="error">Please enter a positive whole number</span></div>
+        <span id="errorSubs" class="error">Please enter a positive whole number</span>
+        <br><span id="subboxes"></span>
         <span id="moneyErrors" class="error">All money values must be positive numbers</span>
         
-        <br><br>
+        <br>
         <span>Do you have car payments? </span>
         <input type = "radio" id="ycar" class = "radioButton" value = "Yes" name = "car" onclick="showQuestion(qcar)"><label>Yes</label>
         <input type="radio" id="ncar" class="radioButton" value="No" name="car" onclick="hideQuestion(qcar)"><label>No</label>
