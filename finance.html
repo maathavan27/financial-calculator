@@ -28,6 +28,10 @@
         <div id="qRent" class="hidden"><label>How much do you pay per month on rent? </label><input type="number" id="rentNum" class="hiddenInp" oninput="checkForNegative(this, errorRent)"><br>
         <span id="errorRent" class="error">Please enter a positive number</span></div><br>
 
+        <span>How many subscriptions do you have (gym, music, streaming, etc)? </span>
+        <input type="number" id="numSubs" oninput="inputSubs(this, errorSubs)">
+        <span id="errorSubs" class="error">Please enter a positive whole number</span></div>
+        <span id="moneyErrors" class="error">All money values must be positive numbers</span>
 
 
 
