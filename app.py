@@ -7,6 +7,10 @@ app = Flask(__name__)
 def index():
     return render_template('finance.html')
 
+@app.route("/results", methods=['GET', 'POST'])
+def results():
+    return render_template('results.html')
+
 @app.route("/notification.mp3")
 def notification():
     return send_file('notification.mp3', attachment_filename='notification.mp3')
