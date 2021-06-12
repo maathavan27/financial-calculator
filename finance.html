@@ -21,6 +21,13 @@
         <div id="qMortgage" class="hidden"><label>How much do you pay per month on your mortgage? </label><input type="number" id="mortgageNum" class="hiddenInp" oninput="checkForNegative(this, errorMortgage)"><br>
         <span id="errorMortgage" class="error">Please enter a positive number</span></div><br>
 
+        <span>Do you pay rent? </span>
+        <input type="radio" id="yRent" class="radioButton" value="Yes" name="rent" onclick="showQuestion(qRent)"><label>Yes</label>
+        <input type="radio" id="nRent" class="radioButton" value="No" name="rent" onclick="hideQuestion(qRent)"><label>No</label>
+        <br>
+        <div id="qRent" class="hidden"><label>How much do you pay per month on rent? </label><input type="number" id="rentNum" class="hiddenInp" oninput="checkForNegative(this, errorRent)"><br>
+        <span id="errorRent" class="error">Please enter a positive number</span></div><br>
+
 
 
 
