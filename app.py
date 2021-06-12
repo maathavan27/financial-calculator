@@ -7,7 +7,6 @@ app = Flask(__name__)
 #when play is pressed
 @app.route("/", methods=['GET','POST'])
 def index():
-
     return render_template('finance.html')
 
 @app.route("/notification.mp3")
