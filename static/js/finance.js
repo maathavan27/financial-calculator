@@ -101,11 +101,11 @@ function store() {
     phone = document.getElementById("phonenum").value;
     internet = document.getElementById("internetnum").value;
 
-    sessionStorage.setItem('income', income);
+    localStorage.setItem('income', income);
     sessionStorage.setItem('mortgage', mortgage);
     sessionStorage.setItem('rent', rent);
-    sessionStorage.setItem('subList', JSON.stringify(subList));
-    sessionStorage.setItem('moneyList', JSON.stringify(moneyList));
+    localStorage.setItem('subList', JSON.stringify(subList));
+    localStorage.setItem('moneyList', JSON.stringify(moneyList));
     sessionStorage.setItem('car', car);
     sessionStorage.setItem('ins', ins);
     sessionStorage.setItem('phone', phone);
