@@ -3,14 +3,14 @@ var income, mortgage, rent, subList, moneyList, car, ins, phone, internet;
 
 window.onload = function(){
     income = localStorage.getItem('income');
-    mortgage = sessionStorage.getItem('mortgage');
-    rent = sessionStorage.getItem('rent');
+    mortgage = localStorage.getItem('mortgage');
+    rent = localStorage.getItem('rent');
     subList = JSON.parse(localStorage.getItem('subList'));
     moneyList = JSON.parse(localStorage.getItem('moneyList'));
-    car = sessionStorage.getItem('car');
-    ins = sessionStorage.getItem('ins');
-    phone = sessionStorage.getItem('phone');
-    internet = sessionStorage.getItem('internet');
+    car = localStorage.getItem('car');
+    ins = localStorage.getItem('ins');
+    phone = localStorage.getItem('phone');
+    internet = localStorage.getItem('internet');
 }
 
 

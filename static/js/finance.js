@@ -102,13 +102,13 @@ function store() {
     internet = document.getElementById("internetnum").value;
 
     localStorage.setItem('income', income);
-    sessionStorage.setItem('mortgage', mortgage);
-    sessionStorage.setItem('rent', rent);
+    localStorage.setItem('mortgage', mortgage);
+    localStorage.setItem('rent', rent);
     localStorage.setItem('subList', JSON.stringify(subList));
     localStorage.setItem('moneyList', JSON.stringify(moneyList));
-    sessionStorage.setItem('car', car);
-    sessionStorage.setItem('ins', ins);
-    sessionStorage.setItem('phone', phone);
-    sessionStorage.setItem('internet', internet);
+    localStorage.setItem('car', car);
+    localStorage.setItem('ins', ins);
+    localStorage.setItem('phone', phone);
+    localStorage.setItem('internet', internet);
     console.log('stored');
 }
