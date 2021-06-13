@@ -94,8 +94,16 @@ function store() {
     income = document.getElementById("salary").value;
     mortgage = document.getElementById("mortgageNum").value;
     rent = document.getElementById("rentNum").value;
-    subList = Array.prototype.slice.call(document.getElementsByClassName("subscriptions"), 0);
-    moneyList = Array.prototype.slice.call(document.getElementsByClassName("subsMoney"), 0);
+    var tempSub = Array.prototype.slice.call(document.getElementsByClassName("subscriptions"), 0);
+    subList = [];
+    for (var i = 0; i < tempSub.length; i++) {
+        subList.push(tempSub[i].value);
+    }
+    var tempMoney = Array.prototype.slice.call(document.getElementsByClassName("subsMoney"), 0);
+    moneyList = [];
+    for (var i = 0; i < tempMoney.length; i++) {
+        moneyList.push(tempMoney[i].value);
+    }
     car = document.getElementById("carnum").value;
     ins = document.getElementById("insnum").value;
     phone = document.getElementById("phonenum").value;
