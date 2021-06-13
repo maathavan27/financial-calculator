@@ -78,12 +78,17 @@ function makeTable() {
             totalOut += temp;
         }
     }
+    if (income == "") {
+        income = "0";
+    }
     totalOut -= income;
     document.getElementById("totalIn").innerHTML = income;
     document.getElementById("totalOut").innerHTML = totalOut;
-    document.getElementById("diff").innerHTML = income - totalOut;
     if (income < totalOut) {
         document.getElementById("negative").innerHTML = "-";
+        document.getElementById("diff").innerHTML = totalOut - income;
+    } else {
+        document.getElementById("diff").innerHTML = income - totalOut;
     }
     
 
