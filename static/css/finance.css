@@ -9,7 +9,15 @@
 }
 body {
     background-color: #A7C4CB;
+    font-family: Helvetica,sans-serif;
+    font-weight: bold
    }
+
+#change {
+    background-color: #90EE90;
+   }
+
+
 
    .candy-stripe  
   ul{
