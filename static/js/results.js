@@ -65,7 +65,7 @@ function makeTable() {
     var table = document.getElementById("results");
     var row, left, right, temp;
     for (var i = 0; i < names.length; i++) {
-        temp = parseFloat(numBox.value);
+        temp = parseFloat(money[i]);
         if (!isNaN(temp) && temp > 0) {
             row = table.insertRow(-1);
             left = row.insertCell(0);
