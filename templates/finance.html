@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h>Calculator</h>
+    <h1>Calculator</h1>
     <form id="finances">
         <br><label>What is your monthly income? </label><input id="salary" type="number" oninput="checkForNegative(this, errorSalary)">
         <span id="errorSalary" class="error">Please enter a positive number</span><br><br>
@@ -65,7 +65,9 @@
         <br><span id="otherboxes"></span>
         <span id="moneyErrors" class="error">All money values must be positive numbers</span>
 
+
         <br><br><a href="{{ url_for('results') }}"><input id="submit" type="button" value="Submit Results" onclick="store()"></a>
+
 
     </form>
 
