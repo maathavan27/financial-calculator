@@ -1,0 +1,18 @@
+.hidden {
+    display: none;
+}
+
+.error {
+    display: none;
+    color: red;
+
+}
+body {
+    background-color: #5edfff;
+    font-family: sans-serif;
+    font-weight: bold;
+   }
+
+#change {
+    background-color: #90EE90;
+   }
