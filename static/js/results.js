@@ -41,6 +41,8 @@ function printValues() {
 function makeTable() {
     var names1 = ['Monthly Income', 'Mortage', 'Rent'];
     var money1 = [income, mortgage, rent];
+    console.log("slen=" + subList.length);
+    console.log("elen=" + expenseList.length);
     if (subList.length > 0) {
         names1 = names1.concat('Subscriptions')
         money1 = money1.concat("");
@@ -59,21 +61,17 @@ function makeTable() {
     }
     var names = names1.concat(subList, names2, expenseList);
     var money = money1.concat(moneyList, money2, expmoneyList);
-    for (var i = 0; i < money.length; i++) {
-        money[i] = '$' + money[i];
-    }
 
     var table = document.getElementById("results");
-    var row, left, right;
+    var row, left, right, temp;
     for (var i = 0; i < names.length; i++) {
-        console.log('|' + money[i] + '|');
-        if (money[i] != '$' && money[i] != '$0') {
-            console.log('true ' + money[i]);
+        temp = parseFloat(numBox.value);
+        if (!isNaN(temp) && temp > 0) {
             row = table.insertRow(-1);
             left = row.insertCell(0);
             left.innerHTML = names[i];
             right = row.insertCell(1);
-            right.innerHTML = money[i];
+            right.innerHTML = '$' + money[i];
         }
     }
 }
