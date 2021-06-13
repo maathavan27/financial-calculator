@@ -59,7 +59,7 @@ function makeTable() {
         subList[i] = '    ' + subList[i];
     }
     for (var i = 0; i < expenseList.length; i++) {
-        expenseList[i] = '    ' + expenseList;
+        expenseList[i] = '    ' + expenseList[i];
     }
     var names = names1.concat(subList, names2, expenseList);
     var money = money1.concat(moneyList, money2, expmoneyList);

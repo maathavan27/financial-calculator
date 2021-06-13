@@ -69,10 +69,6 @@ function removeSubs() {
     moneyList = Array.prototype.slice.call(document.getElementsByClassName("subsMoney"), 0);
     var breakList = Array.prototype.slice.call(document.getElementsByClassName("subBreak"), 0);
     var fullList = labelList.concat(subList, moneyList, breakList);
-    
-    for (var i = 0; i < moneyList.length; i++) { //shows how to get values
-        console.log(subList[i].value + ": $" + moneyList[i].value);
-    }
 
     for (var i = 0; i < fullList.length; i++) {
         fullList[i].remove();
@@ -117,10 +113,6 @@ function removeExps() {
     var moneyList = Array.prototype.slice.call(document.getElementsByClassName("expMoney"), 0);
     var breakList = Array.prototype.slice.call(document.getElementsByClassName("expBreak"), 0);
     var fullList = labelList.concat(expList, moneyList, breakList);
-    
-    for (var i = 0; i < moneyList.length; i++) { //shows how to get values
-        console.log(expList[i].value + ": $" + moneyList[i].value);
-    }
 
     for (var i = 0; i < fullList.length; i++) {
         fullList[i].remove();
