@@ -44,7 +44,7 @@
         <span id="errorcar" class="error">Please enter a positive number</span></div>
         
         <br>
-        <span>Do you pay for your phone and internet bills? </span>
+        <span>Do you have phone and internet bills to pay? </span>
         <input type = "radio" id="yphone" class = "radioButton" value = "Yes" name = "phone" onclick="showQuestion(qphone)"><label>Yes</label>
         <input type="radio" id="nphone" class="radioButton" value="No" name="phone" onclick="hideQuestion(qphone)"><label>No</label>
         <br>
@@ -56,10 +56,10 @@
         <input type = "radio" id="yloan" class = "radioButton" value = "Yes" name = "loan" onclick="showQuestion(qloan)"><label>Yes</label>
         <input type="radio" id="nloan" class="radioButton" value="No" name="loan" onclick="hideQuestion(qloan)"><label>No</label>
         <br>
-        <div id="qloan" class="hidden"><label>How much money have you loaned? <input type="number" id="loannum" class="hiddenInp" oninput="checkForNegative(this, errorloan)">
+        <div id="qloan" class="hidden"><label>How much money do you need to repay this month? </label><input type="number" id="loannum" class="hiddenInp" oninput="checkForNegative(this, errorloan)">
         <span id="errorloan" class="error">Please enter a positive number</span></div><br>
 
-        <span> How many expenses do you have? </span>
+        <span> How many other expenses do you have? </span>
         <input type="number" id="numExps" oninput="inputExp(this, errorExps)">
         <span id="errorExps" class="error">Please enter a positive whole number</span></div>
         <br><span id="otherboxes"></span>
