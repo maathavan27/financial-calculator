@@ -64,16 +64,27 @@ function makeTable() {
     var names = names1.concat(subList, names2, expenseList);
     var money = money1.concat(moneyList, money2, expmoneyList);
 
+    var totalOut = 0;
     var table = document.getElementById("results");
     var row, left, right, temp;
     for (var i = 0; i < names.length; i++) {
         temp = parseFloat(money[i]);
-        if (!isNaN(temp) && temp > 0 && names[i] != "Subscriptions" && names[i] != "Other Expenses") {
+        if (!isNaN(temp) && temp > 0) {
             row = table.insertRow(-1);
             left = row.insertCell(0);
             left.innerHTML = names[i];
             right = row.insertCell(1);
             right.innerHTML = '$' + money[i];
+            totalOut += temp;
         }
     }
+    totalOut -= income;
+    document.getElementById("totalIn").innerHTML = income;
+    document.getElementById("totalOut").innerHTML = totalOut;
+    document.getElementById("diff").innerHTML = income - totalOut;
+    if (income < totalOut) {
+        document.getElementById("negative").innerHTML = "-";
+    }
+    
+
 }
