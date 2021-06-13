@@ -13,9 +13,11 @@ window.onload = function(){
     ins = localStorage.getItem('ins');
     phone = localStorage.getItem('phone');
     internet = localStorage.getItem('internet');
+    loan = localStorage.getItem('loan');
+    expenseList = JSON.parse(localStorage.getItem('expenseList'));
+    expmoneyList = JSON.parse(localStorage.getItem('expmoneyList'));
+    printValues();
 }
-
-
 
 function printValues() {
     console.log("income=" + income);
@@ -23,10 +25,14 @@ function printValues() {
     console.log("rent=" + rent);
     console.log("Subscriptions:")
     for (var i = 0; i < moneyList.length; i++) {
-        console.log(subList[i] + ": $" + moneyList[i]);
+        console.log("    " + subList[i] + ": $" + moneyList[i]);
     }
     console.log("car payments=" + car);
     console.log("car insurance=" + ins);
     console.log("phone payments=" + phone);
     console.log("internet=" + internet);
+    console.log("loans=" + loan)
+    for (var i = 0; i < expmoneyList.length; i++) {
+        console.log("    " + expenseList[i] + ": $" + expmoneyList[i])
+    }
 }

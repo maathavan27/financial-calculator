@@ -52,8 +52,20 @@
         <br>  How much do you pay for internet per month?  </label>  <input type="number" id="internetnum" class="hiddenInp" oninput="checkForNegative(this, errorphone)"><br>
         <span id="errorphone" class="error">Please enter a positive number</span></div><br>
 
+        <span>Do you have any loans to repay? </span>
+        <input type = "radio" id="yloan" class = "radioButton" value = "Yes" name = "loan" onclick="showQuestion(qloan)"><label>Yes</label>
+        <input type="radio" id="nloan" class="radioButton" value="No" name="loan" onclick="hideQuestion(qloan)"><label>No</label>
+        <br>
+        <div id="qloan" class="hidden"><label>How much money have you loaned? <input type="number" id="loannum" class="hiddenInp" oninput="checkForNegative(this, errorloan)">
+        <span id="errorloan" class="error">Please enter a positive number</span></div><br>
 
-        <br><a href="{{ url_for('results') }}"><input id="submit" type="button" value="Submit Results" onclick="store()"></a><br><input type="button" onclick="printValues()">
+        <span> How many expenses do you have? </span>
+        <input type="number" id="numExps" oninput="inputExp(this, errorExps)">
+        <span id="errorExps" class="error">Please enter a positive whole number</span></div>
+        <br><span id="otherboxes"></span>
+        <span id="moneyErrors" class="error">All money values must be positive numbers</span>
+
+        <br><br><a href="{{ url_for('results') }}"><input id="submit" type="button" value="Submit Results" onclick="store()"></a>
 
     </form>
 

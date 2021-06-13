@@ -32,7 +32,7 @@ function checkForInt(numBox, error) {
 
 function inputSubs(numBox, error) {
     checkForInt(numBox, error)
-    removeSubs(numBox);
+    removeSubs();
     var num = parseInt(numBox.value);
     var finances = document.getElementById("subboxes");
     for (var i = 0; i < num; i++) {
@@ -64,7 +64,7 @@ function inputSubs(numBox, error) {
     
 }
 
-function removeSubs(numBox) {
+function removeSubs() {
     var labelList = Array.prototype.slice.call(document.getElementsByClassName("labeler"), 0);
     subList = Array.prototype.slice.call(document.getElementsByClassName("subscriptions"), 0);
     moneyList = Array.prototype.slice.call(document.getElementsByClassName("subsMoney"), 0);
@@ -89,7 +89,7 @@ function printValues() {
     console.log("abc");
 }
 
-var income, mortgage, rent, subList, moneyList, car, ins, phone, internet;
+var income, mortgage, rent, subList, moneyList, car, ins, phone, internet, loan, expenseList, expmoneyList;
 function store() {
     income = document.getElementById("salary").value;
     mortgage = document.getElementById("mortgageNum").value;
@@ -108,7 +108,17 @@ function store() {
     ins = document.getElementById("insnum").value;
     phone = document.getElementById("phonenum").value;
     internet = document.getElementById("internetnum").value;
-
+    loan = document.getElementById(loannum);
+    var tempExpenses = Array.prototype.slice.call(document.getElementsByClassName("expenses"), 0);
+    expenseList = []
+    for (var i = 0; i < tempExpenses.length; i++) {
+        expenseList.push(tempExpenses[i].value);
+    }
+    var tempExpMoney = Array.prototype.slice.call(document.getElementsByClassName("expMoney"), 0);
+    expmoneyList = []
+    for (var i = 0; i < tempExpMoney.length; i++) {
+        expmoneyList.push(tempExpMoney[i].value);
+    }
     localStorage.setItem('income', income);
     localStorage.setItem('mortgage', mortgage);
     localStorage.setItem('rent', rent);
@@ -118,5 +128,56 @@ function store() {
     localStorage.setItem('ins', ins);
     localStorage.setItem('phone', phone);
     localStorage.setItem('internet', internet);
+    localStorage.setItem('loan', loan);
+    localStorage.setItem('expenseList', JSON.stringify(expenseList));
+    localStorage.setItem('expMoneyList', JSON.stringify(expmoneyList));
     console.log('stored');
+}
+
+function inputExp(numBox, error){
+    checkForInt(numBox, error)
+    removeExps()
+    var num1 = parseInt(numBox.value);
+    var other = document.getElementById("otherboxes");
+    for (var i = 0; i < num1; i++) {
+        var nameLabel = document.createElement("label");
+        nameLabel.innerHTML = "Name: ";
+        nameLabel.setAttribute("class", "labeler1")
+        var exp = document.createElement("input");
+        exp.setAttribute("type", "text");
+        exp.setAttribute("class", "expenses");
+        var moneyLabel = document.createElement("label");
+        moneyLabel.innerHTML = "&emsp;$ "
+        var money = document.createElement("input");
+        money.setAttribute("type", "number");
+        money.setAttribute("class", "expMoney");
+        moneyLabel.setAttribute("class", "labeler1")
+        var err = document.createElement("span");
+        err.innerHTML = "Please enter a positive number";
+        err.setAttribute("class", "error");
+        var br = document.createElement("br");
+        br.setAttribute("class", "expBreak");
+        other.appendChild(nameLabel);
+        other.appendChild(exp);
+        other.appendChild(moneyLabel);
+        other.appendChild(money);
+        other.appendChild(err);
+        other.appendChild(br);
+    }
+}
+
+function removeExps() {
+    var labelList = Array.prototype.slice.call(document.getElementsByClassName("labeler1"), 0);
+    var expList = Array.prototype.slice.call(document.getElementsByClassName("expenses"), 0);
+    var moneyList = Array.prototype.slice.call(document.getElementsByClassName("expMoney"), 0);
+    var breakList = Array.prototype.slice.call(document.getElementsByClassName("expBreak"), 0);
+    var fullList = labelList.concat(expList, moneyList, breakList);
+    
+    for (var i = 0; i < moneyList.length; i++) { //shows how to get values
+        console.log(expList[i].value + ": $" + moneyList[i].value);
+    }
+
+    for (var i = 0; i < fullList.length; i++) {
+        fullList[i].remove();
+    }
 }
