@@ -4,13 +4,13 @@
 
 .error {
     display: none;
-    color: red
+    color: red;
 
 }
 body {
     background-color: #A7C4CB;
     font-family: Helvetica,sans-serif;
-    font-weight: bold
+    font-weight: bold;
    }
 
 #change {

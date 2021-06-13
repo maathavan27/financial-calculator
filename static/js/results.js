@@ -43,9 +43,11 @@ function makeTable() {
     var money1 = [income, mortgage, rent];
     console.log("slen=" + subList.length);
     console.log("elen=" + expenseList.length);
+    console.log(subList);
     if (subList.length > 0) {
         names1 = names1.concat('Subscriptions')
         money1 = money1.concat("");
+        console.log(names1);
     }
     var names2 = ['Car Payments', 'Car Insurance', 'Phone Payments', 'Internet Cost', 'Loan Payments'];
     var money2 = [car, ins, phone, internet, loan];
@@ -66,7 +68,7 @@ function makeTable() {
     var row, left, right, temp;
     for (var i = 0; i < names.length; i++) {
         temp = parseFloat(money[i]);
-        if (!isNaN(temp) && temp > 0) {
+        if (!isNaN(temp) && temp > 0 && names[i] != "Subscriptions" && names[i] != "Other Expenses") {
             row = table.insertRow(-1);
             left = row.insertCell(0);
             left.innerHTML = names[i];
