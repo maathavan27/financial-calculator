@@ -11,9 +11,5 @@ def index():
 def results():
     return render_template('results.html')
 
-@app.route("/notification.mp3")
-def notification():
-    return send_file('notification.mp3', attachment_filename='notification.mp3')
-
 if __name__ == '__main__':
     app.run(debug=True)
